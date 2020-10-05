@@ -5,8 +5,8 @@ These scripts will query the ShapeShift API for all Monero input transactions wi
 First, run getTxData.py for the block range you wish to check. This script will generate a text file "xmr_txData_{startblock}-{endblock}.txt" 
 with a json formatted list on each line in the form ["txid", "pid", "timestamp_utc"]
 
-Next, run querySS.py, which will create a text file "RESULTS_{startblock}-{endblock}" with ShapeShift transactions statistics (txStats) for all Monero transactions that were 
-sent to ShapeShift in your given block range. Each txStat will be saved as a json formatted dictionary on a newline of the save file. 
+Next, run querySS.py, which will create a text file "RESULTS_{startblock}-{endblock}" with ShapeShift transactions statistics (txStats) for all Monero transactions
+that were sent to ShapeShift in your given block range. Each txStat will be saved as a json formatted dictionary on a newline of the save file. 
 Two new keys -- "timestamp_utc" and "xmr_txid" -- are added which are not included in the original txStat.
 
 pprint example of first ever Monero ShapeShift txStat on April 7, 2015:
