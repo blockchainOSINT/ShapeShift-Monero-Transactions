@@ -40,9 +40,10 @@ def saveData(txData, block_height, speed, startblock, endblock):
         saveLog.write(f"Last saved at Block: {block_height}\n")
 
 def main():
-
-    STARTBLOCK = 1146000 # remember, already have blocks 1515000 - 1520000
-    ENDBLOCK   = 1176999 # highest 980000
+    
+    # define block range to check
+    STARTBLOCK = 1146000 
+    ENDBLOCK   = 1176999 
 
     save_interval = 100
     last_save = STARTBLOCK # keeps track of blocks already written to file, in case of disconnection
