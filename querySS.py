@@ -56,7 +56,10 @@ def checkSS(unique_txData):
             errors.append(url)
 
         if speed_log == 100:
-            print("\t\t\t\tSpeed:", round(total_queries / (time.time() - start_time) * 3600, 1), "queries / hr\n")
+            percent_complete = round(total_queries / len(unique_txData) * 100, 1)
+            speed = round(total_queries / (time.time() - start_time) * 3600, 1)
+            # indent for visual seperation
+            print("\t\t\t\tSpeed:", speed, "queries / hr", f"\n\t\t\t\t{percent_complete}% complete\n")
             speed_log = 0
 
     return txStats, total_queries, errors
