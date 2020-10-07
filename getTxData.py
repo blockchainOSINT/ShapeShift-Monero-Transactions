@@ -49,7 +49,7 @@ def main():
     last_save = STARTBLOCK # keeps track of blocks already written to file, in case of disconnection
     start_time = time.time()
     save_txData = [] # resets after each save
-    total_txData = [] # keeps track of total number of saved datapoints
+    total_txData = 0 # keeps track of total number of saved datapoints
     errors = [] # keep track of blocks with errors, if any
     print() # add space to terminal for aesthetics
 
@@ -61,7 +61,7 @@ def main():
             errors.append(error)
 
         save_txData += txData
-        total_txData += txData
+        total_txData += len(txData)
 
         if block_height - last_save == save_interval:
             speed = round((block_height - STARTBLOCK) / (time.time() - start_time) * 3600 , 1)
@@ -73,7 +73,7 @@ def main():
             saveData(save_txData, block_height, speed, STARTBLOCK, ENDBLOCK)
 
     save_file_name = f"xmr_txData_{STARTBLOCK}-{ENDBLOCK}.txt"
-    print("\nSaved Transactions:", len(total_txData), "\nSave File:", save_file_name)
+    print("\nSaved Transactions:", total_txData, "\nSave File:", save_file_name)
 
     time_elapsed = round((time.time() - start_time) / 60, 1) # minutes
     avg_speed = round(((ENDBLOCK - STARTBLOCK) / time_elapsed), 1) * 60 # bloxks per hour
