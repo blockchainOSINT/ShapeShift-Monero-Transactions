@@ -41,7 +41,7 @@ def checkSS(unique_txData):
     for data in unique_txData:
         txid, pid, timestamp = data
         url = f"https://shapeshift.io/txstat/{pid}"
-        response = requests.get(url=url, proxies=random.choice(proxy))
+        response = requests.get(url=url) # optional param: proxies=random.choice(proxy)
         total_queries += 1
         speed_log += 1
 
