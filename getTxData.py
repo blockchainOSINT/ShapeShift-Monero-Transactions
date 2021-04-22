@@ -8,7 +8,6 @@ import requests, json, time
 def getTxData(block_height):
 
     txData = []
-    payment_ids = [] # to keep track of duplicate pids; ShapeShift requires a unique pid, thus duplicates do not need to be saved **verified
     error = []
     url = f"https://www.xmrchain.net/api/block/{block_height}"
     response = requests.get(url=url)
