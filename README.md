@@ -10,7 +10,7 @@ Next, run `querySS.py`, which will create a text file `RESULTS_{startblock}-{end
 that were sent to ShapeShift in your given block range. Each txStat will be saved as a json formatted dictionary on a newline of the save file. 
 Two new keys -- "timestamp_utc" and "xmr_txid" -- are added which are not included in the original txStat.
 
-pprint example of first ever Monero ShapeShift txStat on April 7, 2015:
+Example Result: the first ever Monero ShapeShift txStat on April 7, 2015:
 
 `{'address': 'a388e23cd2a046159ac765013d7d53021070fb72dd5d59f800cced7d9fe6baff',
  'incomingCoin': 0.1,
