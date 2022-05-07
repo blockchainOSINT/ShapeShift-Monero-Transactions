@@ -3,7 +3,7 @@
 
 import requests, json, time
 
-"""another valid url: https://blox.minexmr.com/api/block/{block_height}"""
+# another valid url: https://blox.minexmr.com/api/block/{block_height}
 
 def getTxData(block_height):
 
